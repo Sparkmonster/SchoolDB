@@ -1,7 +1,33 @@
 Rails.application.routes.draw do
-  resources :students
-  resources :sections
-  resources :courses
-  resources :professors
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users
+
+  get 'welcome/index'
+  get '/loginsuccess', to: 'welcome#loginsuccess', as: :loginsuccess
+
+  resources :students do
+    collection do
+      get 'search'
+    end
+  end
+
+  resources :sections do
+    collection do
+      get 'search'
+    end
+  end
+
+  resources :courses do
+    collection do
+      get 'search'
+    end
+  end
+
+  resources :professors do
+    collection do
+      get 'search'
+    end
+  end
+
+  root to: 'welcome#index'
+
 end

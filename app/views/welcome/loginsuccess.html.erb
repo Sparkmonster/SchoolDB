@@ -1,0 +1,12 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1>Thanks for logging into the Fantasy School Database!</h1>
+    <p> Listed below are the possible pages to visit to edit entries. </p>
+    <%= link_to 'Fantasy Professors', controller: 'professors' %><br />
+    <%= link_to 'Fantasy Courses', controller: 'courses' %><br />
+    <%= link_to 'Course Sections', controller: 'sections' %><br />
+    <%= link_to 'Current Students', controller: 'students' %><br />
+
+    <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+  </div>
+</div>

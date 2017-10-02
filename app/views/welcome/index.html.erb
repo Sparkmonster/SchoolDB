@@ -1,0 +1,14 @@
+<% content_for :top_content do %>
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Welcome to the Fantasy School Database!</h1>
+      <p>All fantasy faculty members or creatures must register to use the school system database.</p>
+      <p>
+        <%= link_to 'Register', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+      </p>
+      <p> If you are having trouble logging in, please use the following link below so our tech support can assist you
+        as soon as possible. </p>
+        <a href="http://www.homestarrunner.com/systemisdown.html">Tech Support</a>
+    </div>
+  </div>
+<% end %>

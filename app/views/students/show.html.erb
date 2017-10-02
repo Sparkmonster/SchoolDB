@@ -20,5 +20,15 @@
   <%= @student.age %>
 </p>
 
+<p>
+  <strong>Professor:</strong>
+  <%= @student.professor.name %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @student.course.name %>
+</p>
+
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>

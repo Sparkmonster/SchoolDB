@@ -16,12 +16,17 @@
     <%= form.text_field :name, id: :professor_name %>
   </div>
 
+  <strong> Max Length: 50 Characters </strong>
+
   <div class="field">
     <%= form.label :department %>
     <%= form.text_field :department, id: :professor_department %>
   </div>
 
+  <strong> Min Length: 5 Characters , Max Legnth: 45 characters  </strong>
+
   <div class="actions">
     <%= form.submit %>
   </div>
+
 <% end %>

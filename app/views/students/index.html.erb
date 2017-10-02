@@ -9,7 +9,9 @@
       <th>Hobby</th>
       <th>Major</th>
       <th>Age</th>
-      <th colspan="3"></th>
+      <th>Professor</th>
+      <th>Course</th>
+      <th colspan="5"></th>
     </tr>
   </thead>
 
@@ -20,6 +22,8 @@
         <td><%= student.hobby %></td>
         <td><%= student.major %></td>
         <td><%= student.age %></td>
+        <td><%= student.professor.name %></td>
+        <td><%= student.course.name %></td>
         <td><%= link_to 'Show', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
         <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -28,6 +32,13 @@
   </tbody>
 </table>
 
+<%= form_tag(search_students_url, method: "get") do %>
+    <%= label_tag(:name, "Search by name:") %>
+    <%= text_field_tag(:name) %>
+    <%= submit_tag("Search") %>
+<% end %>
+
 <br>
 
 <%= link_to 'New Student', new_student_path %>
+<%= link_to 'Welcome Page', controller: 'welcome' %>

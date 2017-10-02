@@ -16,20 +16,28 @@
     <%= form.text_field :name, id: :course_name %>
   </div>
 
+  <strong> Max character length for your name should be no more than 50. </strong>
+
   <div class="field">
     <%= form.label :number %>
     <%= form.number_field :number, id: :course_number %>
   </div>
+
+  <strong> The course number has to be 1000 or greater. </strong>
 
   <div class="field">
     <%= form.label :semester %>
     <%= form.text_field :semester, id: :course_semester %>
   </div>
 
+  <strong> Semester names need to be any of the Earth Seasons: Fall, Winter, Spring, or Summer. </strong>
+
   <div class="field">
     <%= form.label :date %>
     <%= form.date_select :date, id: :course_date %>
   </div>
+
+  <strong> Date should be accurately recorded at the start of any fantasy course. </strong>
 
   <div class="actions">
     <%= form.submit %>

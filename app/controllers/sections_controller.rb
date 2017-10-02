@@ -61,6 +61,11 @@ class SectionsController < ApplicationController
     end
   end
 
+  def search
+    @sections = Section.where("sectionNum = ?","%#{params[:sectionNum]}%")
+    render :index
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_section
