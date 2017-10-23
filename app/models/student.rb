@@ -1,6 +1,8 @@
 class Student < ApplicationRecord
   belongs_to :professor
   belongs_to :course
+  has_many :enrollments
+  has_many :sections, through: :enrollments
 
   # Validations below
   validates :name, presence: true, length: { minimum: 1, maximum: 50, too_long:

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SchoolDB</title>
+    <title>Fantasy School Database</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -25,6 +25,11 @@
         <li><%= link_to 'Welcome', root_path %></li>
           <% if user_signed_in? %>
             <li><%= link_to 'Login Success', loginsuccess_path %></li>
+            <li><%= link_to 'Fantasy Professors', controller: 'professors' %></li>
+            <li><%= link_to 'Fantasy Courses', controller: 'courses' %></li>
+            <li><%= link_to 'Course Sections', controller: 'sections' %></li>
+            <li><%= link_to 'Current Students', controller: 'students' %></li>
+            <li><%= link_to 'Enrollment List', controller: 'enrollments' %></li>
           <% end %>
       </ul>
       <ul class="nav navbar-nav pull-right">

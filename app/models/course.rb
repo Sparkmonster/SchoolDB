@@ -1,8 +1,6 @@
 class Course < ApplicationRecord
   has_many :sections
-  has_many :students
   has_many :professors, through: :sections
-  has_many :professors, through: :students
   validates :name, presence: true, length: { minimum: 1, maximum: 50, too_long:
      "%{count} characters is the maximum allowed for fantasy courses", too_short:
      "%{count} characters is not long enough for fantasy courses." }

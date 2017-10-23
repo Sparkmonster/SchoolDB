@@ -30,5 +30,39 @@
   <%= @student.course.name %>
 </p>
 
+<ol type="1">
+  <li>Fantasy Enrollments</li>
+  <li>Section #</li>
+  <li>Fantasy Professor</li>
+  <ol type="I">
+    <% @student.sections.each do |section| %>
+      <li><%= section.course.name %></li>
+      <li><%= section.sectionNum %></li>
+      <li><%= section.professor.name %></li>
+    <% end %>
+  </ol>
+</ol>
+
+<!-- <table>
+  <thead>
+    <tr>
+      <th>Fantasy Enrollments</th>
+      <th>Fantasy Section #</th>
+      <th>Fantasy Professor</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @student.sections.each do |section| %>
+      <tr>
+        <td ><%= section.course.name %></td>
+        <td><%= section.sectionNum %></td>
+        <td><%= section.professor.name %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table> -->
+
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>

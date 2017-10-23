@@ -10,5 +10,29 @@
   <%= @professor.department %>
 </p>
 
+<ol type="I">
+  <% @professor.sections.each do |section| %>
+    <li><%= section.course.name %></li>
+    <li><%= section.sectionNum %></li>
+    <ol type="1">
+      <li>Name</li>
+      <li>Hobby</li>
+      <li>Major</li>
+      <li>Age</li>
+      <ol type="i">
+        <% section.students.each do |student| %>
+          <li><%= student.name %>, </li>
+          <li><%= student.hobby %></li>
+          <li><%= student.major%></li>
+          <li><%= student.age%></li>
+        <% end %>
+      </ol>
+    </ol>
+  <% end %>
+</ol>
+
+
+
+
 <%= link_to 'Edit', edit_professor_path(@professor) %> |
 <%= link_to 'Back', professors_path %>

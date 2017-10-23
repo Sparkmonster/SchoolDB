@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :enrollments
   devise_for :users
 
   get 'welcome/index'
@@ -23,6 +24,12 @@ Rails.application.routes.draw do
   end
 
   resources :professors do
+    collection do
+      get 'search'
+    end
+  end
+
+  resources :enrollments do
     collection do
       get 'search'
     end

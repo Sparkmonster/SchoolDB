@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Enrollments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Enrollnum</th>
+      <th>Enrolltype</th>
+      <th>Section</th>
+      <th>Student</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @enrollments.each do |enrollment| %>
+      <tr>
+        <td><%= enrollment.enrollNum %></td>
+        <td><%= enrollment.enrollType %></td>
+        <td><%= enrollment.section.sectionNum %></td>
+        <td><%= enrollment.student.name %></td>
+        <td><%= link_to 'Show', enrollment %></td>
+        <td><%= link_to 'Edit', edit_enrollment_path(enrollment) %></td>
+        <td><%= link_to 'Destroy', enrollment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= form_tag(search_sections_url, method: "get") do %>
+    <%= label_tag(:enrollNum, "Search by Enrollment Number:") %>
+    <%= text_field_tag(:enrollNum) %>
+    <%= submit_tag("Search") %>
+<% end %>
+
+<br>
+
+<%= link_to 'New Enrollment', new_enrollment_path %>

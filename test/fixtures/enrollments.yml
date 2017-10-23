@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  enrollNum: 1
+  enrollType: MyString
+  section: one
+  student: one
+
+two:
+  enrollNum: 1
+  enrollType: MyString
+  section: two
+  student: two
